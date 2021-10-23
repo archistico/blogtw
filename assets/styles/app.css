@@ -1,3 +1,32 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+body {
+    @apply bg-black text-green-400;
+}
+
+section {
+    @apply container mx-auto font-mono text-white;
+}
+
+.titolo {
+    @apply text-4xl font-press-start uppercase pb-10;
+}
+
+.articolo_titolo {
+    @apply text-2xl font-extrabold text-gray-100 uppercase font-press-start;
+}
+
+.articolo_data {
+    @apply font-light text-gray-500 text-sm;
+}
+
+.articolo_categoria {
+    @apply font-light text-gray-500 text-sm pb-5;
+}
+
+.articolo_testo {
+    @apply text-gray-300 pb-10;
+}
+
