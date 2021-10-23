@@ -43,6 +43,7 @@ Info https://tailwindcss.com/docs/installation
 ```
 npm run build
 ```
+oppure ```npm run watch```
 ### Creazione pagina di demo
 Creazione di una route con un controller
 ```
@@ -53,4 +54,19 @@ Tolgo i commenti a
 ```
 {{ encore_entry_link_tags('app') }}
 {{ encore_entry_script_tags('app') }}
+```
+### Attivazione PurgeCss solo per produzione
+Per evitare css enormi https://markrailton.com/blog/using-tailwind-css-and-purgecss-with-symfony-encore  
+Aggiungere il codice a webpack.config.js nella penultima riga
+```
+if (Encore.isProduction()) {
+  Encore.addPlugin(new PurgeCssPlugin({
+        paths: glob.sync([
+            path.join(__dirname, 'templates/**/*.html.twig')
+        ]),
+        defaultExtractor: (content) => {
+            return content.match(/[\w-/:]+(?<!:)/g) || [];
+        }
+    }));
+}
 ```
