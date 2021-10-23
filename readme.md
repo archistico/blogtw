@@ -70,3 +70,7 @@ if (Encore.isProduction()) {
     }));
 }
 ```
+### Spegnere il server in background
+```
+symfony local:server:stop
+```
