@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "Prova",
+            "database": "${workspaceFolder:blogtw}/var/data.db"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}
